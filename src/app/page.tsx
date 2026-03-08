@@ -527,14 +527,14 @@ export default function HomePage() {
 
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4" staggerDelay={0.06}>
             {[
-              { cat: "Brunettes", title: "Rich Brunette", img: "/gallery-brunette.png" },
-              { cat: "Bridal", title: "Bridal Elegance", img: "/gallery-bridal.png" },
-              { cat: "Extensions", title: "Volume & Length", img: "/gallery-extensions.png" },
-              { cat: "Balayage", title: "Honey Balayage", img: "/about-bg.png" },
-              { cat: "Blondes", title: "Luxury Blonde", img: "/hero-bg.png" },
-              { cat: "Balayage", title: "Caramel Tones", img: "/gallery-brunette.png" },
-              { cat: "Bridal", title: "Wedding Day Glam", img: "/gallery-bridal.png" },
-              { cat: "Extensions", title: "Keratin Bonds", img: "/gallery-extensions.png" },
+              { cat: "Brunettes", title: "Rich Brunette", img: "/gallery/gallery-5.jpg" },
+              { cat: "Bridal", title: "Bridal Elegance", img: "/gallery/gallery-4.jpg" },
+              { cat: "Extensions", title: "Volume & Length", img: "/gallery/gallery-3.jpg" },
+              { cat: "Balayage", title: "Honey Balayage", img: "/gallery/gallery-2.jpg" },
+              { cat: "Blondes", title: "Luxury Blonde", img: "/gallery/gallery-1.jpg" },
+              { cat: "Balayage", title: "Caramel Tones", img: "/gallery/gallery-12.jpg" },
+              { cat: "Bridal", title: "Wedding Day Glam", img: "/gallery/gallery-9.jpg" },
+              { cat: "Extensions", title: "Keratin Bonds", img: "/gallery/gallery-7.jpg" },
             ].map((item, idx) => (
               <StaggerItem key={`${item.title}-${idx}`}>
                 <Link href="/gallery" className="group block relative aspect-[3/4] overflow-hidden rounded-lg img-hover-zoom">
@@ -678,12 +678,12 @@ export default function HomePage() {
           {/* Instagram-style Grid */}
           <StaggerContainer className="grid grid-cols-3 md:grid-cols-6 gap-2 lg:gap-3 mb-14" staggerDelay={0.05}>
             {[
-              { img: "/gallery-brunette.png", alt: "Brunette transformation" },
-              { img: "/gallery-bridal.png", alt: "Bridal styling" },
-              { img: "/gallery-extensions.png", alt: "Hair extensions" },
-              { img: "/hero-bg.png", alt: "Luxury blonde" },
-              { img: "/about-bg.png", alt: "Balayage" },
-              { img: "/gallery-brunette.png", alt: "Dimensional colour" },
+              { img: "/gallery/gallery-10.jpg", alt: "Brunette transformation" },
+              { img: "/gallery/gallery-4.jpg", alt: "Bridal styling" },
+              { img: "/gallery/gallery-3.jpg", alt: "Hair extensions" },
+              { img: "/gallery/gallery-6.jpg", alt: "Luxury blonde" },
+              { img: "/gallery/gallery-12.jpg", alt: "Balayage" },
+              { img: "/gallery/gallery-11.jpg", alt: "Dimensional colour" },
             ].map((post, idx) => (
               <StaggerItem key={idx}>
                 <a
