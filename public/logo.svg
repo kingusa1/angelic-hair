@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4B87A;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#F0D9A0;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#E8C89E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C9A96E;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C9A96E;stop-opacity:0" />
+      <stop offset="20%" style="stop-color:#D4B87A;stop-opacity:0.7" />
+      <stop offset="50%" style="stop-color:#F0D9A0;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#D4B87A;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#C9A96E;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="goldSolid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C9A96E;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#D4B87A;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top decorative corners -->
+  <path d="M 50 18 L 50 38 M 50 18 L 70 18" stroke="url(#goldSolid)" stroke-width="1" opacity="0.5"/>
+  <path d="M 430 18 L 430 38 M 430 18 L 410 18" stroke="url(#goldSolid)" stroke-width="1" opacity="0.5"/>
+
+  <!-- Main Brand Name — ANGELIC -->
+  <text x="240" y="82" text-anchor="middle" font-family="'Cormorant Garamond', 'Georgia', serif" font-size="62" font-weight="400" letter-spacing="14" fill="url(#goldGrad)">
+    ANGELIC
+  </text>
+
+  <!-- Decorative Line with diamond -->
+  <line x1="100" y1="102" x2="215" y2="102" stroke="url(#goldLine)" stroke-width="1"/>
+  <rect x="233" y="96" width="14" height="14" rx="1" transform="rotate(45 240 103)" fill="none" stroke="#D4B87A" stroke-width="0.8" opacity="0.6"/>
+  <rect x="236.5" y="99.5" width="7" height="7" rx="0.5" transform="rotate(45 240 103)" fill="#D4B87A" opacity="0.3"/>
+  <line x1="265" y1="102" x2="380" y2="102" stroke="url(#goldLine)" stroke-width="1"/>
+
+  <!-- HAIR Text -->
+  <text x="240" y="145" text-anchor="middle" font-family="'Cormorant Garamond', 'Georgia', serif" font-size="46" font-weight="400" letter-spacing="22" fill="url(#goldGrad)">
+    HAIR
+  </text>
+
+  <!-- Tagline -->
+  <text x="240" y="178" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="10" font-weight="500" letter-spacing="5" fill="#D4B87A" opacity="0.7">
+    BY ANGELINA HYSKO
+  </text>
+
+  <!-- Subtle bottom accent line -->
+  <line x1="170" y1="192" x2="310" y2="192" stroke="url(#goldLine)" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Bottom decorative corners -->
+  <path d="M 50 202 L 50 182 M 50 202 L 70 202" stroke="url(#goldSolid)" stroke-width="1" opacity="0.5"/>
+  <path d="M 430 202 L 430 182 M 430 202 L 410 202" stroke="url(#goldSolid)" stroke-width="1" opacity="0.5"/>
+</svg>
