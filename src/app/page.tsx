@@ -8,13 +8,9 @@ import {
   FadeInUp,
   FadeIn,
   GoldLineReveal,
-  ScaleIn,
-  SlideInLeft,
   SlideInRight,
-  GoldCornerFrame,
   StaggerContainer,
   StaggerItem,
-  MagneticHover,
 } from "@/components/AnimatedSection";
 
 /* ── Data ── */
@@ -63,35 +59,26 @@ function HeroSection() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.92]);
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <motion.div style={{ scale: imgScale }} className="absolute inset-0">
+      <div className="absolute inset-0">
         <Image
           src="/hero-bg.png"
           alt="Luxury hair transformation"
           fill
           className="object-cover"
           priority
-          quality={90}
+          quality={75}
         />
-      </motion.div>
+      </div>
 
       {/* Dark overlay gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/70 via-[#0D0D0D]/40 to-[#0D0D0D]/90 z-[1]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D]/50 via-transparent to-[#0D0D0D]/50 z-[1]" />
 
-      {/* Animated gold particles */}
-      <div className="absolute inset-0 z-[2]">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3, delay: 1 }}
-          className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[#C9A96E]/[0.04] blur-[120px]"
-        />
-      </div>
+      {/* Gold atmospheric glow */}
+      <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[#C9A96E]/[0.04] blur-[120px] z-[2]" />
 
       {/* Noise texture */}
       <div className="absolute inset-0 z-[3] texture-overlay" />
@@ -100,9 +87,9 @@ function HeroSection() {
       <motion.div style={{ y: textY, opacity, scale }} className="relative z-20 text-center px-6 max-w-5xl mx-auto">
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
             src="/logo.svg"
@@ -114,39 +101,28 @@ function HeroSection() {
           />
         </motion.div>
 
-        {/* Decorative line */}
+        {/* Tagline + line + location */}
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mx-auto mb-10 origin-center"
-        />
-
-        {/* Tagline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
-          className="font-accent italic text-2xl md:text-3xl lg:text-4xl font-normal text-white/90 tracking-wide mb-5 leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          Luxury Hair Transformations
-        </motion.h1>
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mx-auto mb-10" />
 
-        {/* Location */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.6 }}
-          className="font-body text-[11px] tracking-[0.4em] uppercase text-[#C9A96E]/70 mb-16"
-        >
-          By Angelina Hysko &middot; Leeds &amp; Dubai
-        </motion.p>
+          <h1 className="font-accent italic text-2xl md:text-3xl lg:text-4xl font-normal text-white/90 tracking-wide mb-5 leading-relaxed">
+            Luxury Hair Transformations
+          </h1>
+
+          <p className="font-body text-[11px] tracking-[0.4em] uppercase text-[#C9A96E]/70 mb-16">
+            By Angelina Hysko &middot; Leeds &amp; Dubai
+          </p>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-5"
         >
           <Link
@@ -165,19 +141,10 @@ function HeroSection() {
       </motion.div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3"
-      >
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3">
         <span className="font-body text-[9px] tracking-[0.3em] uppercase text-white/25">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[1px] h-10 bg-gradient-to-b from-[#C9A96E]/50 to-transparent"
-        />
-      </motion.div>
+        <div className="w-[1px] h-10 bg-gradient-to-b from-[#C9A96E]/50 to-transparent animate-pulse" />
+      </div>
     </section>
   );
 }
@@ -232,7 +199,8 @@ export default function HomePage() {
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
-              quality={80}
+              quality={75}
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0D0D0D]/30 lg:bg-gradient-to-r lg:from-transparent lg:to-[#0D0D0D]/60" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent lg:hidden" />
@@ -316,29 +284,27 @@ export default function HomePage() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5" staggerDelay={0.06}>
             {specialities.map((item) => (
               <StaggerItem key={item.name}>
-                <MagneticHover>
-                  <Link href="/services" className="group block h-full">
-                    <div className="relative bg-white/[0.03] border border-white/[0.06] p-8 lg:p-9 text-center hover:bg-[#C9A96E]/[0.06] hover:border-[#C9A96E]/20 transition-all duration-500 h-full overflow-hidden rounded-lg card-hover">
-                      {/* Corner accents */}
-                      <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-[#C9A96E]/0 group-hover:border-[#C9A96E]/25 transition-all duration-500" />
-                      <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-[#C9A96E]/0 group-hover:border-[#C9A96E]/25 transition-all duration-500" />
+                <Link href="/services" className="group block h-full">
+                  <div className="relative bg-white/[0.03] border border-white/[0.06] p-8 lg:p-9 text-center hover:bg-[#C9A96E]/[0.06] hover:border-[#C9A96E]/20 transition-all duration-500 h-full overflow-hidden rounded-lg card-hover">
+                    {/* Corner accents */}
+                    <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-[#C9A96E]/0 group-hover:border-[#C9A96E]/25 transition-all duration-500" />
+                    <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-[#C9A96E]/0 group-hover:border-[#C9A96E]/25 transition-all duration-500" />
 
-                      {/* Number */}
-                      <span className="font-heading text-3xl font-light text-[#C9A96E]/15 mb-3 block group-hover:text-[#C9A96E]/30 transition-colors duration-500">
-                        {item.icon}
-                      </span>
+                    {/* Number */}
+                    <span className="font-heading text-3xl font-light text-[#C9A96E]/15 mb-3 block group-hover:text-[#C9A96E]/30 transition-colors duration-500">
+                      {item.icon}
+                    </span>
 
-                      <h3 className="font-body text-[10px] tracking-[0.2em] uppercase text-white/70 font-medium mb-3 leading-relaxed group-hover:text-[#C9A96E] transition-colors duration-300">
-                        {item.name}
-                      </h3>
+                    <h3 className="font-body text-[10px] tracking-[0.2em] uppercase text-white/70 font-medium mb-3 leading-relaxed group-hover:text-[#C9A96E] transition-colors duration-300">
+                      {item.name}
+                    </h3>
 
-                      {/* Description reveals on hover */}
-                      <p className="font-body text-[12px] text-white/30 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </Link>
-                </MagneticHover>
+                    {/* Description reveals on hover */}
+                    <p className="font-body text-[12px] text-white/30 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                      {item.desc}
+                    </p>
+                  </div>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>

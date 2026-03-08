@@ -1,24 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeInUp, GoldLineReveal, GoldCornerFrame } from "@/components/AnimatedSection";
 
 const categories = ["All", "Blondes", "Brunettes", "Balayage", "Extensions", "Bridal"];
 
 const galleryItems = [
-  { id: 1, category: "Blondes", title: "Luxury Blonde Transformation", desc: "Full head highlights with dimensional toning" },
-  { id: 2, category: "Balayage", title: "Honey Balayage", desc: "Hand-painted warm honey tones through brunette base" },
-  { id: 3, category: "Extensions", title: "Volume & Length", desc: "Nano extensions for natural fullness and length" },
-  { id: 4, category: "Bridal", title: "Bridal Elegance", desc: "Classic bridal updo with soft face-framing pieces" },
-  { id: 5, category: "Brunettes", title: "Dimensional Brunette", desc: "Rich, multi-tonal brunette with caramel highlights" },
-  { id: 6, category: "Blondes", title: "Icy Platinum", desc: "Cool-toned platinum blonde with lived-in root" },
-  { id: 7, category: "Balayage", title: "Foilyage Blend", desc: "Foil-applied colour for maximum brightness and blend" },
-  { id: 8, category: "Extensions", title: "Keratin Bond Extensions", desc: "Premium keratin bonds for seamless integration" },
-  { id: 9, category: "Bridal", title: "Destination Wedding", desc: "Glamorous Hollywood waves for Dubai wedding" },
-  { id: 10, category: "Brunettes", title: "Chocolate Gloss", desc: "Deep chocolate tones with mirror-shine gloss treatment" },
-  { id: 11, category: "Blondes", title: "Babylights", desc: "Ultra-fine babylights for a natural, sun-kissed look" },
-  { id: 12, category: "Balayage", title: "Caramel Balayage", desc: "Warm caramel tones blended through a dark base" },
+  { id: 1, category: "Blondes", title: "Luxury Blonde Transformation", desc: "Full head highlights with dimensional toning", image: "/gallery/gallery-1.jpg" },
+  { id: 2, category: "Balayage", title: "Honey Balayage", desc: "Hand-painted warm honey tones through brunette base", image: "/gallery/gallery-2.jpg" },
+  { id: 3, category: "Extensions", title: "Volume & Length", desc: "Nano extensions for natural fullness and length", image: "/gallery/gallery-3.jpg" },
+  { id: 4, category: "Bridal", title: "Bridal Elegance", desc: "Classic bridal updo with soft face-framing pieces", image: "/gallery/gallery-4.jpg" },
+  { id: 5, category: "Brunettes", title: "Dimensional Brunette", desc: "Rich, multi-tonal brunette with caramel highlights", image: "/gallery/gallery-5.jpg" },
+  { id: 6, category: "Blondes", title: "Icy Platinum", desc: "Cool-toned platinum blonde with lived-in root", image: "/gallery/gallery-6.jpg" },
+  { id: 7, category: "Balayage", title: "Foilyage Blend", desc: "Foil-applied colour for maximum brightness and blend", image: "/gallery/gallery-7.jpg" },
+  { id: 8, category: "Extensions", title: "Keratin Bond Extensions", desc: "Premium keratin bonds for seamless integration", image: "/gallery/gallery-8.jpg" },
+  { id: 9, category: "Bridal", title: "Destination Wedding", desc: "Glamorous Hollywood waves for Dubai wedding", image: "/gallery/gallery-9.jpg" },
+  { id: 10, category: "Brunettes", title: "Chocolate Gloss", desc: "Deep chocolate tones with mirror-shine gloss treatment", image: "/gallery/gallery-10.jpg" },
+  { id: 11, category: "Blondes", title: "Babylights", desc: "Ultra-fine babylights for a natural, sun-kissed look", image: "/gallery/gallery-11.jpg" },
+  { id: 12, category: "Balayage", title: "Caramel Balayage", desc: "Warm caramel tones blended through a dark base", image: "/gallery/gallery-12.jpg" },
 ];
 
 export default function GalleryPage() {
@@ -84,8 +85,15 @@ export default function GalleryPage() {
                   transition={{ delay: i * 0.04, duration: 0.5 }}
                   className="group relative bg-[#111111] aspect-[3/4] flex items-end overflow-hidden cursor-pointer"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#8A7455]/30 via-[#3D2B0E]/50 to-[#2C1F0A]/70 group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1F0A]/85 via-transparent to-transparent" />
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    quality={75}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/80 via-[#0D0D0D]/20 to-transparent" />
                   <div className="absolute inset-2 border border-[#C9A96E]/0 group-hover:border-[#C9A96E]/25 transition-all duration-500 pointer-events-none" />
                   <div className="absolute inset-0 bg-[#C9A96E]/0 group-hover:bg-[#C9A96E]/10 transition-all duration-500" />
 
