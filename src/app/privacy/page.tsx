@@ -48,7 +48,7 @@ export default function PrivacyPage() {
               <h2 className="font-heading text-3xl font-light text-white/80 mb-2">1. Introduction</h2>
               <div className="w-10 h-[1px] bg-gradient-to-r from-[#C9A96E] to-transparent mb-6" />
               <p className="font-body text-[14px] text-white/80 leading-[2]">
-                Angelic Hair by Angelina Hysko (&ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store and protect your personal data when you use our website (angelichair.com) and our services. We are based in the United Kingdom and comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+                Angelic Hair by Angelina Hysko (&ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store and protect your personal data when you use our website (angelicchair.com) and our services. We are based in the United Kingdom and comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
               </p>
             </div>
           </FadeInUp>

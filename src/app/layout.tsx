@@ -28,7 +28,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://angelic-hair.vercel.app"),
+  metadataBase: new URL("https://angelicchair.com"),
   title: "Angelic Hair by Angelina Hysko | Luxury Hair Transformations",
   description:
     "Luxury hair transformations by Angelina Hysko. Specialising in colour, extensions, bridal styling and K18 treatments across Leeds, UK and Dubai, UAE. 14+ years of excellence.",

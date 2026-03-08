@@ -48,7 +48,7 @@ export default function TermsPage() {
               <h2 className="font-heading text-3xl font-light text-white/80 mb-2">1. Introduction</h2>
               <div className="w-10 h-[1px] bg-gradient-to-r from-[#C9A96E] to-transparent mb-6" />
               <p className="font-body text-[14px] text-white/80 leading-[2]">
-                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the Angelic Hair website (angelichair.com) and the hairdressing services provided by Angelic Hair by Angelina Hysko (&ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;). By accessing our website or booking our services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not use our website or services.
+                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the Angelic Hair website (angelicchair.com) and the hairdressing services provided by Angelic Hair by Angelina Hysko (&ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;). By accessing our website or booking our services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not use our website or services.
               </p>
             </div>
           </FadeInUp>
