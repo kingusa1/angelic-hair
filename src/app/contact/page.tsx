@@ -9,12 +9,13 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Open mailto with form data
-    const subject = encodeURIComponent(`Angelic Hair Enquiry — ${formData.service || "General"}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nLocation: ${formData.location === "leeds" ? "Leeds, UK" : "Dubai, UAE"}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
+    // Build WhatsApp message with form data
+    const locationLabel = formData.location === "leeds" ? "Leeds, UK" : "Dubai, UAE";
+    const serviceLabel = formData.service || "General Enquiry";
+    const whatsappMessage = encodeURIComponent(
+      `Hi Angelina! I'd like to make an enquiry.\n\nName: ${formData.name}\nEmail: ${formData.email}\nLocation: ${locationLabel}\nService: ${serviceLabel}\n\nMessage:\n${formData.message}`
     );
-    window.open(`mailto:angelichairbyah@gmail.com?subject=${subject}&body=${body}`, "_self");
+    window.open(`https://wa.me/447510411105?text=${whatsappMessage}`, "_blank");
     setSubmitted(true);
   };
 

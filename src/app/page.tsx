@@ -525,16 +525,17 @@ export default function HomePage() {
             <GoldLineReveal className="w-20" />
           </div>
 
+          {/* Photo Gallery Grid */}
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4" staggerDelay={0.06}>
             {[
-              { cat: "Brunettes", title: "Rich Brunette", img: "/gallery/gallery-5.jpg" },
-              { cat: "Bridal", title: "Bridal Elegance", img: "/gallery/gallery-4.jpg" },
-              { cat: "Extensions", title: "Volume & Length", img: "/gallery/gallery-3.jpg" },
-              { cat: "Balayage", title: "Honey Balayage", img: "/gallery/gallery-2.jpg" },
               { cat: "Blondes", title: "Luxury Blonde", img: "/gallery/gallery-1.jpg" },
-              { cat: "Balayage", title: "Caramel Tones", img: "/gallery/gallery-12.jpg" },
-              { cat: "Bridal", title: "Wedding Day Glam", img: "/gallery/gallery-9.jpg" },
-              { cat: "Extensions", title: "Keratin Bonds", img: "/gallery/gallery-7.jpg" },
+              { cat: "Balayage", title: "Ash Caramel", img: "/gallery/gallery-2.jpg" },
+              { cat: "Bridal", title: "Hollywood Waves", img: "/gallery/gallery-4.jpg" },
+              { cat: "Brunettes", title: "Rich Brunette", img: "/gallery/gallery-5.jpg" },
+              { cat: "Blondes", title: "Blonde Balayage", img: "/gallery/gallery-6.jpg" },
+              { cat: "Extensions", title: "Nano Extensions", img: "/gallery/gallery-3.jpg" },
+              { cat: "Bridal", title: "Crystal Half-Up", img: "/gallery/gallery-9.jpg" },
+              { cat: "Balayage", title: "Caramel Ombre", img: "/gallery/gallery-12.jpg" },
             ].map((item, idx) => (
               <StaggerItem key={`${item.title}-${idx}`}>
                 <Link href="/gallery" className="group block relative aspect-[3/4] overflow-hidden rounded-lg img-hover-zoom">
@@ -546,19 +547,11 @@ export default function HomePage() {
                     sizes="(max-width: 1024px) 50vw, 25vw"
                     quality={75}
                   />
-                  {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/80 via-[#0D0D0D]/10 to-transparent" />
-
-                  {/* Gold overlay on hover */}
                   <div className="absolute inset-0 bg-[#C9A96E]/0 group-hover:bg-[#C9A96E]/10 transition-all duration-500" />
-
-                  {/* Gold frame on hover */}
                   <div className="absolute inset-2 border border-[#C9A96E]/0 group-hover:border-[#C9A96E]/20 rounded-md transition-all duration-500" />
-
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                    <span className="font-body text-[8px] tracking-[0.2em] uppercase text-[#C9A96E]/80 block mb-1">
-                      {item.cat}
-                    </span>
+                    <span className="font-body text-[8px] tracking-[0.2em] uppercase text-[#C9A96E]/80 block mb-1">{item.cat}</span>
                     <h3 className="font-heading text-lg text-white leading-tight">{item.title}</h3>
                   </div>
                 </Link>
@@ -566,12 +559,44 @@ export default function HomePage() {
             ))}
           </StaggerContainer>
 
+          {/* Transformation Videos */}
+          <div className="mt-16">
+            <FadeInUp className="text-center mb-10">
+              <p className="font-body text-[10px] tracking-[0.35em] uppercase text-white/40 mb-4">Behind the Chair</p>
+              <h3 className="font-heading text-2xl md:text-3xl font-light text-[#C9A96E]">Transformation Videos</h3>
+            </FadeInUp>
+            <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" staggerDelay={0.06}>
+              {[1, 2, 3, 4, 5, 6].map((n) => (
+                <StaggerItem key={n}>
+                  <Link href="/gallery" className="group block relative aspect-[9/16] bg-[#111111] overflow-hidden rounded-lg">
+                    <video
+                      src={`/videos/transformation-${n}.mp4`}
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
+                      onMouseLeave={(e) => { const v = e.target as HTMLVideoElement; v.pause(); v.currentTime = 0; }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
+                      <div className="w-10 h-10 border border-[#C9A96E]/50 rounded-full flex items-center justify-center bg-[#0D0D0D]/40">
+                        <svg className="w-4 h-4 text-[#C9A96E] ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                      </div>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
           <FadeInUp className="text-center mt-14">
             <Link
               href="/gallery"
               className="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.15em] uppercase px-10 py-3.5 border border-[#C9A96E]/25 text-[#C9A96E] hover:bg-[#C9A96E] hover:text-[#0D0D0D] transition-all duration-500 rounded-full btn-outline"
             >
-              Explore the Gallery
+              Explore the Full Gallery
             </Link>
           </FadeInUp>
         </div>
@@ -676,14 +701,20 @@ export default function HomePage() {
           </div>
 
           {/* Instagram-style Grid */}
-          <StaggerContainer className="grid grid-cols-3 md:grid-cols-6 gap-2 lg:gap-3 mb-14" staggerDelay={0.05}>
+          <StaggerContainer className="grid grid-cols-4 md:grid-cols-6 gap-2 lg:gap-3 mb-14" staggerDelay={0.05}>
             {[
-              { img: "/gallery/gallery-10.jpg", alt: "Brunette transformation" },
-              { img: "/gallery/gallery-4.jpg", alt: "Bridal styling" },
-              { img: "/gallery/gallery-3.jpg", alt: "Hair extensions" },
-              { img: "/gallery/gallery-6.jpg", alt: "Luxury blonde" },
-              { img: "/gallery/gallery-12.jpg", alt: "Balayage" },
-              { img: "/gallery/gallery-11.jpg", alt: "Dimensional colour" },
+              { img: "/gallery/gallery-17.jpg", alt: "Golden highlights" },
+              { img: "/gallery/gallery-21.jpg", alt: "Gold leaf updo" },
+              { img: "/gallery/gallery-19.jpg", alt: "Honey balayage" },
+              { img: "/gallery/gallery-22.jpg", alt: "Nano extensions" },
+              { img: "/gallery/gallery-18.jpg", alt: "Rich chocolate brunette" },
+              { img: "/gallery/gallery-20.jpg", alt: "Blonde curly half-up" },
+              { img: "/gallery/gallery-25.jpg", alt: "Caramel brunette" },
+              { img: "/gallery/gallery-16.jpg", alt: "Blonde bridal" },
+              { img: "/gallery/gallery-28.jpg", alt: "Golden balayage" },
+              { img: "/gallery/gallery-24.jpg", alt: "Chocolate waves" },
+              { img: "/gallery/gallery-15.jpg", alt: "Glamour waves" },
+              { img: "/gallery/gallery-30.jpg", alt: "Curly updo" },
             ].map((post, idx) => (
               <StaggerItem key={idx}>
                 <a
@@ -697,7 +728,7 @@ export default function HomePage() {
                     alt={post.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 33vw, 16vw"
+                    sizes="(max-width: 768px) 25vw, 16vw"
                     quality={75}
                   />
                   <div className="absolute inset-0 bg-[#0D0D0D]/0 group-hover:bg-[#0D0D0D]/40 transition-all duration-500 flex items-center justify-center">
